@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{DA30ECE0-A711-4F9F-9F5A-80A7E05B53F8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>dottwitch</RootNamespace>
+    <AssemblyName>dottwitch</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>dottwitch.ico</ApplicationIcon>
+    <StartupObject>dotTwitch.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colorful.Console">
+      <HintPath>..\..\Colorful.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Figgle">
+      <HintPath>..\..\Figgle.dll</HintPath>
+    </Reference>
+    <Reference Include="Leaf.xNet">
+      <HintPath>..\..\Leaf.xNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dotTwitch\Core\Modules\Bits.cs" />
+    <Compile Include="dotTwitch\Core\Modules\Brute.cs" />
+    <Compile Include="dotTwitch\Core\Modules\Checker.cs" />
+    <Compile Include="dotTwitch\Core\Modules\Follow.cs" />
+    <Compile Include="dotTwitch\Core\Modules\Legacy.cs" />
+    <Compile Include="dotTwitch\Core\Modules\Sub.cs" />
+    <Compile Include="dotTwitch\Program.cs" />
+    <Compile Include="NOSRequest\Encryption.cs" />
+    <Compile Include="NOSRequest\NOSRequest.cs" />
+    <Compile Include="NOSRequest\Response.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RONIN\Core\BackEnd\Auth\Authentication.cs" />
+    <Compile Include="RONIN\Core\BackEnd\Auth\HWID.cs" />
+    <Compile Include="RONIN\Core\BackEnd\Auth\LoginCore.cs" />
+    <Compile Include="RONIN\Core\BackEnd\Auth\MainFunction.cs" />
+    <Compile Include="RONIN\Core\BackEnd\Auth\RegisterCore.cs" />
+    <Compile Include="RONIN\Core\BackEnd\Data\DataCore.cs" />
+    <Compile Include="RONIN\Core\BackEnd\Design\RDesign.cs" />
+    <Compile Include="RONIN\Core\BackEnd\SlavLib\Check.cs" />
+    <Compile Include="RONIN\Core\BackEnd\SlavLib\SlavCore.cs" />
+    <Compile Include="RONIN\Core\BackEnd\Variables\Var.cs" />
+    <Compile Include="RONIN\Kohl\Core\Security\Protection\Checksum.cs" />
+    <Compile Include="RONIN\Kohl\Core\Security\Protection\Globals.cs" />
+    <Compile Include="RONIN\Kohl\Core\Security\Protection\Protection.cs" />
+    <Compile Include="RONIN\Kohl\Core\Security\Updater\UpdateCheck.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
